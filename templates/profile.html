@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+
+<h1>BookHome</h1>
+<h4>Ебать ты лох такое гавно включил</h4>
+<a href="/logout">Вышел вон из качалки</a>
+{% else %}
+
+<h1>BookHome</h1>
+<h4>Ебать ты лох незареганный</h4>
+<a href="/login">Войти</a> 
+<a href="/register">300 bucks плати</a>
+{% endif %}
+{% endblock %}

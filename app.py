@@ -2,7 +2,7 @@
 
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
-from instagram import getfollowedby, getname
+# from instagram import getfollowedby, getname
 
 
 app = Flask(__name__)
@@ -25,12 +25,14 @@ class User(db.Model):
 def home():
     """ Session control"""
     if not session.get('logged_in'):
-        return render_template('index.html')
+        return render_template('profile.html')
     else:
         if request.method == 'POST':
-            username = getname(request.form['username'])
-            return render_template('index.html', data=getfollowedby(username))
-        return render_template('index.html')
+            return render_template('index.html')
+        # if request.method == 'POST':
+        #     username = getname(request.form['username'])
+        #     return render_template('index.html', data=getfollowedby(username))
+        return render_template('profile.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
