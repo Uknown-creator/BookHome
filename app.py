@@ -1,4 +1,4 @@
-"""Flask Login Example and instagram fallowing find"""
+"""Flask Login Example and instagram fallowing find""" 
 
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy

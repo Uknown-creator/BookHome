@@ -1,10 +1,94 @@
 <html>
   <head>
 		<title>BookHome</title>
+    <style>
+      body { background: #ffffff; font-family: 'PT Sans',sans-serif; text-transform: uppercase; letter-spacing: 1px;}
+      
+      header {
+          text-align: justify;
+          height: 8em;
+          padding: 2em 5%;
+          background: #426fb5;
+          color: #fff;
+      }
+        
+      header::after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+      }
+        
+      header > div,
+      header > div::before,
+      header nav,
+      header > div h1 {
+          display: inline-block;
+          vertical-align: middle;
+          text-align: left;
+      }
+        
+      header > div {
+          height: 100%;
+      }
+        
+      header > div::before {
+          content: '';
+          height: 100%;
+      }
+        
+      header > div h1 {
+          font-size: 3em;
+          font-style: italic;
+      }
+        
+      header nav a {
+          padding: 0 0.6em;
+          white-space: nowrap;
+      }
+        
+      header nav a:last-child {
+          padding-right: 0;
+      }
+        
+      @media screen and (max-width: 720px){
+            
+          header {
+              height: auto;
+          }
+            
+          header > div,
+          header > div h1,
+          header nav {
+              height: auto;
+              width: auto;
+              display: block;
+              text-align: center;
+          }
+        }
+      #header_1 {
+        color: white;
+        font-size: smaller;
+        text-align: center;
+        margin-top: -0.625em;
+        margin-right: 25%; /* 474px by left */
+        /* position: static; */
+      }
+      .header_1 {
+        background-color: #2d4a77;
+        height: 36px;
+        line-height: 2.3em; 
+      }
+    </style>
   </head>
   <body>
-    <div><a href="/">BookHome</a></div>
-		
+    <div class="header_1">
+      <h4 id="header_1">BookHome - следите за новостями ваших библиотек</h4>
+    </div>
+    
+    <header>
+      <h1>BookHome</h1>
+      <nav><a>Полка</a><a>Поиск</a><a>Войти</a></nav>
+  </header>
     <hr>
     {% block content %}{% endblock %}
   </body>
